@@ -5,8 +5,30 @@ const students = [
   { name: "Joan", score: 95 },
 ];
 
-function getAverageStudentScore(students) {
-  // Start coding here
+//console.log(students[0])
+
+function total (sum, num) {
+  sum = sum+num
+  return sum
+
 }
 
-getAverageStudentScore(students); // Output: 87.5
+function getAverageStudentScore(students) {
+  // Start coding here
+  let result=[];
+
+  for (let index=0; index<students.length; index++) {
+    for (let key in students[index]) {
+      if(key ===`score`){
+        result.push(students[index][key])
+      } 
+    }
+  }
+  
+  return result.reduce(total, 0)/students.length
+  
+}
+
+//getAverageStudentScore(students); // Output: 87.5
+
+console.log(getAverageStudentScore(students))
