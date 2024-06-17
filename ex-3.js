@@ -13,10 +13,9 @@ function getTodoTopics(todos) {
   }
 }
 
-//getTodoTopics(todos);
-
 console.log(todos.map(getTodoTopics))
 
+//getTodoTopics(todos);
 /* 
 	Output:
 	[
@@ -27,3 +26,14 @@ console.log(todos.map(getTodoTopics))
 		'Clean the room'
 	]
 */
+
+function getTodosTopics(todos) {
+	function todosTopics (todos) {
+	for (let key in todos) {
+		return todos[key]
+	  }
+	}
+	return todos.map(todosTopics)
+}
+
+console.log(getTodosTopics(todos))
